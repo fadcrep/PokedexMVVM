@@ -24,8 +24,8 @@
         </Grid.RowDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="3" Fill="#CC0000" />
         <Image Grid.Column="1" Grid.Row="1" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png"></Image>
-        <ListBox x:Name="lb_pokemons" Grid.Row="4" Grid.Column="1">
-            <ListBox.Resources>
+        <ListBox ItemsSource="{Binding Pokemons}" SelectedItem="{Binding SelectedPokemon}" x:Name="lb_pokemons" Grid.Row="4" Grid.Column="1">
+            <ListBox.Resources >
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
@@ -49,7 +49,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Border Background="#CCC" BorderThickness="5" BorderBrush="#333" Grid.Column="1" CornerRadius="20">
-                <Image />
+                <Image Source="{Binding Pokemon.Sprites.Front_default}" />
             </Border>
             <TextBlock Grid.Row="2" FontFamily="Pokemon GB" FontSize="34" TextAlignment="Center" Grid.Column="1"></TextBlock>
             
